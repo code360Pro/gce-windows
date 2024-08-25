@@ -1,0 +1,24 @@
+{
+  "builders": [
+    {
+      "type": "googlecompute",
+      "project_id": "sharp-respect-426621-b8",
+      "zone": "us-central1-a",
+      "source_image": "projects/windows-cloud/global/images/windows-2019-base",
+      "machine_type": "n1-standard-1",
+      "name_prefix": "packer-windows-image",
+      "disk_size": 100,
+      "credentials_file": "your-service-account-key.json"
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "windows-remote-exec",
+      "username": "user@example.com",
+      "password": "your-password",
+      "inline": [
+        "powershell.exe -ExecutionPolicy Bypass -File \"C:\\\\your\\script.ps1\""
+      ]
+    }
+  ]
+}
