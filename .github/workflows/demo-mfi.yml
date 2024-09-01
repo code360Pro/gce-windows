@@ -39,8 +39,9 @@ jobs:
       run: packer --version
     - name: Install Packer
       run: |
-          curl https://releases.packer.io/latest/packer_linux_amd64.zip -o packer.zip
+          curl https://releases.hashicorp.com/packer/1.11.2/packer_1.11.2_freebsd_amd64.zip -o packer.zip
           unzip packer.zip
+          sudo mv packer /usr/local/bin
     - name: Build GCP Windows Image
       run: |
           packer build packer/package.json
