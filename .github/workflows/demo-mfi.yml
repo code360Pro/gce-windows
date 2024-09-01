@@ -35,12 +35,12 @@ jobs:
     - name: List Instances
       run: |-
         gcloud compute instances list --project $PROJECT_ID
-    
+    - name: Verify Packer Installation
+      run: packer --version
     - name: Install Packer
       run: |
           curl https://releases.packer.io/latest/packer_linux_amd64.zip -o packer.zip
           unzip packer.zip
-          sudo mv packer /usr/local/bin
     - name: Build GCP Windows Image
       run: |
           packer build packer/package.json
