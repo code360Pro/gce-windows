@@ -39,5 +39,5 @@ jobs:
       run: packer --version
     - name: Build GCP Windows Image
       run: |
-          ls /packer
-          packer build ./packer/package.json
+          ls -all
+          packer build package.json
