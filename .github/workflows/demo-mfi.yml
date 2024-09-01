@@ -40,4 +40,4 @@ jobs:
     - name: Build GCP Windows Image
       run: |
           ls -all
-          packer build packer/package.json
+          packer build ./packer/package.json
