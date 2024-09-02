@@ -36,7 +36,10 @@ jobs:
       run: |-
         gcloud compute instances list --project $PROJECT_ID
     - name: Verify Packer Installation
-      run: packer --version
+      run: packer --version 
+    - name: Install Packer plugin googlecompute
+      run: |
+          packer plugin install googlecompute
     - name: Build GCP Windows Image
       run: |
           ls -all
