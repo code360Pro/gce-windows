@@ -39,7 +39,7 @@ jobs:
       run: packer --version 
     - name: Install Packer plugin googlecompute
       run: |
-          packer plugin install github.com/hashicorp/googlecompute
+          packer plugins install github.com/hashicorp/googlecompute
     - name: Build GCP Windows Image
       run: |
           ls -all
