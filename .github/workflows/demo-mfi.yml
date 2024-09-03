@@ -40,7 +40,7 @@ jobs:
     - name: Install Packer plugin googlecompute
       run: |
           packer plugins install github.com/hashicorp/googlecompute
-          packer plugins install github.com/hashicorp/packer-windows-remote-exec
+          packer plugins install packer-windows-remote-exec
           packer plugins list
     - name: Build GCP Windows Image
       run: |
